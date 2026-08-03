@@ -74,10 +74,13 @@
     <!-- Navegación -->
     <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/5">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-3 text-2xl font-extrabold tracking-wider">
-                <!-- AQUÍ CAMBIAMOS EL NOMBRE DEL ARCHIVO PARA QUE NO TENGA ESPACIOS -->
-                <img src="logo.png" alt="Logo Vértice" class="w-10 h-10 rounded-full object-cover border border-accent/40 shadow-md">
-                <span class="bg-gradient-to-r from-white via-gray-200 to-accent bg-clip-text text-transparent">VÉRTICE</span>
+            <a href="#" class="flex items-center gap-3 group">
+                <!-- Contenedor del logo con desbordamiento oculto para recortar perfectamente el círculo exterior -->
+                <div class="w-12 h-12 rounded-full overflow-hidden border border-accent/40 shadow-md flex items-center justify-center bg-[#7c9a84]/20">
+                    <img src="logo.png" alt="Logo Vértice" class="w-full h-full object-cover scale-[1.35] transform transition-transform group-hover:scale-150">
+                </div>
+                <!-- Vértice en minúscula -->
+                <span class="text-xl font-bold tracking-tight bg-gradient-to-r from-white via-gray-200 to-accent bg-clip-text text-transparent lowercase">vértice</span>
             </a>
             <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
                 <a href="#servicios" class="hover:text-accent transition-colors">Servicios</a>
@@ -314,13 +317,13 @@
                     <span class="text-xs text-gray-400">Respuesta inmediata</span>
                 </a>
 
-                <!-- Llamada -->
-                <a href="tel:+" class="glass p-8 rounded-2xl border border-white/5 hover:border-accent transition-all group flex flex-col items-center">
-                    <div class="w-16 h-16 rounded-2xl bg-accent/10 border border-accent/20 text-accent flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-phone"></i>
+                <!-- Instagram (Reemplazo con enlace directo a vertice_val) -->
+                <a href="https://instagram.com/vertice_val" target="_blank" class="glass p-8 rounded-2xl border border-white/5 hover:border-accent transition-all group flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-2xl bg-pink-500/10 border border-pink-500/20 text-pink-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-instagram"></i>
                     </div>
-                    <h4 class="text-xl font-bold mb-1 text-white">Llamada</h4>
-                    <span class="text-xs text-gray-400">Atención directa</span>
+                    <h4 class="text-xl font-bold mb-1 text-white">Instagram</h4>
+                    <span class="text-xs text-gray-400">@vertice_val</span>
                 </a>
 
                 <!-- Gmail -->
@@ -338,7 +341,7 @@
     <!-- Footer -->
     <footer class="py-12 border-t border-white/5 text-center text-sm text-gray-500 relative z-10">
         <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <span class="font-bold text-gray-300 tracking-wider">VÉRTICE</span>
+            <span class="font-bold text-gray-300 tracking-wider lowercase">vértice</span>
             <p>&copy; 2026 Vértice. Todos los derechos reservados.</p>
         </div>
     </footer>
