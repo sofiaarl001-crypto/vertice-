@@ -11,14 +11,11 @@
             theme: {
                 extend: {
                     colors: {
-                        // Paleta adaptada del logo (más oscura)
-                        dark: '#14201b', // Fondo principal (verde oliva muy oscuro)
-                        cardDark: '#1f2c26', // Tarjetas (oliva oscuro medio)
-                        accent: '#9cad95', // Acentos (gris verdoso suave del logo, pero más saturado/oscuro para contraste)
-                        accentHover: '#7e8c76', // Hover de acentos
-                        oliveText: '#ced8c9', // Texto principal (crema verdoso muy pálido)
-                        mutedText: '#9ba895', // Texto secundario (oliva pálido)
-                        neonCyan: '#9cad95', // Mantener el cian como acento sutil o cambiar a oliva suave. Decidí usar el oliva.
+                        dark: '#0c1410',        // Fondo principal verde oscuro y elegante
+                        cardDark: '#131f19',    // Fondo de tarjetas secundarias
+                        accent: '#7c9a84',      // Verde oliva suave extraído del logo
+                        accentHover: '#688270', // Tono hover para el verde
+                        neonCyan: '#9dbfAc',    // Acento secundario en tono claro armónico
                     }
                 }
             }
@@ -30,19 +27,19 @@
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #14201b;
-            color: #ced8c9;
+            background-color: #0c1410;
+            color: #f3f4f6;
         }
         .glass {
-            background: rgba(31, 44, 38, 0.7);
+            background: rgba(19, 31, 25, 0.75);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(156, 173, 149, 0.1);
+            border: 1px solid rgba(124, 154, 132, 0.15);
         }
         .glow-effect {
             position: absolute;
             width: 400px;
             height: 400px;
-            background: radial-gradient(circle, rgba(156, 173, 149, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+            background: radial-gradient(circle, rgba(124, 154, 132, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
             z-index: 0;
             pointer-events: none;
         }
@@ -65,28 +62,23 @@
         .animate-scroll:hover {
             animation-play-state: paused;
         }
-        /* Estilo del logo en el header */
-        .logo-img {
-            filter: brightness(0.8) contrast(1.2) hue-rotate(-10deg); /* Sutil ajuste para integrar el verde oliva */
-        }
     </style>
 </head>
-<body class="bg-dark text-oliveText selection:bg-accent selection:text-dark overflow-x-hidden relative">
+<body class="bg-dark text-gray-100 selection:bg-accent selection:text-dark overflow-x-hidden relative">
 
     <!-- Efectos de iluminación ambiental de fondo -->
-    <div class="glow-effect top-10 left-10 opacity-60"></div>
-    <div class="glow-effect top-1/3 right-10 opacity-40"></div>
-    <div class="glow-effect bottom-20 left-1/4 opacity-50"></div>
+    <div class="glow-effect top-10 left-10"></div>
+    <div class="glow-effect top-1/3 right-10"></div>
+    <div class="glow-effect bottom-20 left-1/4"></div>
 
     <!-- Navegación -->
-    <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-accent/10">
+    <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/5">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <a href="#" class="flex items-center gap-3 text-2xl font-extrabold tracking-wider">
-                <!-- Logo VC -->
-                <img src="image_0.png" alt="Vértice Logo" class="h-10 w-10 rounded-full logo-img border-2 border-accent/30">
-                <span class="text-oliveText">VÉRTICE</span>
+                <img src="logo.jpg (2)_2.png" alt="Logo Vértice" class="w-10 h-10 rounded-full object-cover border border-accent/40 shadow-md">
+                <span class="bg-gradient-to-r from-white via-gray-200 to-accent bg-clip-text text-transparent">VÉRTICE</span>
             </a>
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-mutedText">
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
                 <a href="#servicios" class="hover:text-accent transition-colors">Servicios</a>
                 <a href="#impacto" class="hover:text-accent transition-colors">Nosotros</a>
                 <a href="#planes" class="hover:text-accent transition-colors">Planes</a>
@@ -94,7 +86,7 @@
                 <a href="#contacto" class="hover:text-accent transition-colors">Contacto</a>
             </nav>
             <div>
-                <a href="#contacto" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-xl font-semibold text-sm bg-accent hover:bg-accentHover text-dark transition-all shadow-lg shadow-dark/20">
+                <a href="#contacto" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-xl font-semibold text-sm bg-accent hover:bg-accentHover text-dark transition-all shadow-lg shadow-accent/20">
                     Empezar ahora
                 </a>
             </div>
@@ -104,25 +96,25 @@
     <!-- Hero Section / Pregunta Dinámica Interactiva -->
     <section class="relative min-h-screen flex items-center justify-center pt-28 pb-20 px-6">
         <div class="max-w-4xl mx-auto text-center z-10">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8 text-xs font-semibold text-mutedText tracking-wide uppercase border border-accent/20 floating">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8 text-xs font-semibold text-accent tracking-wide uppercase border border-accent/20 floating">
                 <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span> El futuro digital de tu negocio
             </div>
             
             <!-- Contenedor Dinámico e Interactivo -->
-            <h1 id="dynamic-hero-title" class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight mb-8 transition-all duration-500 text-oliveText">
-                ¿Sigues sin saber cómo <span class="text-accent cursor-pointer underline decoration-accent/40 hover:decoration-accent transition-all" onclick="changeDynamicText()" title="¡Haz clic para cambiar!">mostrar tus productos con propósito</span>?
+            <h1 id="dynamic-hero-title" class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight mb-8 transition-all duration-500">
+                ¿Sigues sin saber cómo <span class="bg-gradient-to-r from-accent to-neonCyan bg-clip-text text-transparent cursor-pointer underline decoration-accent/40 hover:decoration-accent transition-all" onclick="changeDynamicText()" title="¡Haz clic para cambiar!">mostrar tus productos con propósito</span>?
             </h1>
             
-            <p class="text-lg sm:text-xl text-mutedText max-w-2xl mx-auto mb-10 leading-relaxed">
+            <p class="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
                 Transformamos tu visión en experiencias digitales memorables que conectan, impactan y multiplican tus conversiones.
             </p>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#contacto" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold bg-accent hover:bg-accentHover text-dark transition-all shadow-xl shadow-dark/25 flex items-center justify-center gap-3 group">
+                <a href="#contacto" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold bg-accent hover:bg-accentHover text-dark transition-all shadow-xl shadow-accent/25 flex items-center justify-center gap-3 group">
                     <span>Empezar ahora</span>
                     <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
                 </a>
-                <a href="#servicios" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold glass hover:bg-white/5 text-oliveText transition-all border border-accent/10 flex items-center justify-center">
+                <a href="#servicios" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold glass hover:bg-white/10 text-white transition-all border border-white/10 flex items-center justify-center">
                     Ver Servicios
                 </a>
             </div>
@@ -134,76 +126,76 @@
         <div class="max-w-7xl mx-auto">
             <div class="text-center max-w-2xl mx-auto mb-20">
                 <h2 class="text-xs font-bold tracking-widest text-accent uppercase mb-3">Lo que hacemos</h2>
-                <h3 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-oliveText">Servicios diseñados para hacer crecer tu negocio</h3>
+                <h3 class="text-3xl sm:text-5xl font-extrabold tracking-tight">Servicios diseñados para hacer crecer tu negocio</h3>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Servicio 1 -->
-                <div class="glass p-8 rounded-2xl border border-accent/5 hover:border-accent/30 transition-all duration-300 group hover:-translate-y-2">
+                <div class="glass p-8 rounded-2xl border border-white/5 hover:border-accent/40 transition-all duration-300 group hover:-translate-y-2">
                     <div class="w-14 h-14 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent text-2xl mb-6 group-hover:bg-accent group-hover:text-dark transition-all">
                         <i class="fa-solid fa-laptop-code"></i>
                     </div>
-                    <h4 class="text-xl font-bold mb-3 text-oliveText">Páginas Web</h4>
-                    <p class="text-mutedText text-sm leading-relaxed">Sitios profesionales que convierten visitantes en clientes. Diseño estratégico, velocidad y experiencia de usuario impecable.</p>
+                    <h4 class="text-xl font-bold mb-3 text-white">Páginas Web</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Sitios profesionales que convierten visitantes en clientes. Diseño estratégico, velocidad y experiencia de usuario impecable.</p>
                 </div>
 
                 <!-- Servicio 2 -->
-                <div class="glass p-8 rounded-2xl border border-accent/5 hover:border-accent/30 transition-all duration-300 group hover:-translate-y-2">
+                <div class="glass p-8 rounded-2xl border border-white/5 hover:border-accent/40 transition-all duration-300 group hover:-translate-y-2">
                     <div class="w-14 h-14 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent text-2xl mb-6 group-hover:bg-accent group-hover:text-dark transition-all">
                         <i class="fa-solid fa-book-open"></i>
                     </div>
-                    <h4 class="text-xl font-bold mb-3 text-oliveText">Catálogos Interactivos</h4>
-                    <p class="text-mutedText text-sm leading-relaxed">Presenta tus productos con impacto. Catálogos digitales estratégicos que guían la decisión de compra.</p>
+                    <h4 class="text-xl font-bold mb-3 text-white">Catálogos Interactivos</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Presenta tus productos con impacto. Catálogos digitales estratégicos que guían la decisión de compra.</p>
                 </div>
 
                 <!-- Servicio 3 -->
-                <div class="glass p-8 rounded-2xl border border-accent/5 hover:border-accent/30 transition-all duration-300 group hover:-translate-y-2">
+                <div class="glass p-8 rounded-2xl border border-white/5 hover:border-accent/40 transition-all duration-300 group hover:-translate-y-2">
                     <div class="w-14 h-14 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent text-2xl mb-6 group-hover:bg-accent group-hover:text-dark transition-all">
                         <i class="fa-solid fa-wand-magic-sparkles"></i>
                     </div>
-                    <h4 class="text-xl font-bold mb-3 text-oliveText">Identidades de Marca</h4>
-                    <p class="text-mutedText text-sm leading-relaxed">Construimos la identidad visual que refleja el alma de tu negocio: logotipos, paletas, tipografías y más.</p>
+                    <h4 class="text-xl font-bold mb-3 text-white">Identidades de Marca</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Construimos la identidad visual que refleja el alma de tu negocio: logotipos, paletas, tipografías y más.</p>
                 </div>
 
                 <!-- Servicio 4 -->
-                <div class="glass p-8 rounded-2xl border border-accent/5 hover:border-accent/30 transition-all duration-300 group hover:-translate-y-2">
+                <div class="glass p-8 rounded-2xl border border-white/5 hover:border-accent/40 transition-all duration-300 group hover:-translate-y-2">
                     <div class="w-14 h-14 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent text-2xl mb-6 group-hover:bg-accent group-hover:text-dark transition-all">
                         <i class="fa-solid fa-arrows-rotate"></i>
                     </div>
-                    <h4 class="text-xl font-bold mb-3 text-oliveText">Rebrandings Completos</h4>
-                    <p class="text-mutedText text-sm leading-relaxed">Transformamos marcas existentes. Análisis profundo, estrategia y ejecución de principio a fin.</p>
+                    <h4 class="text-xl font-bold mb-3 text-white">Rebrandings Completos</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Transformamos marcas existentes. Análisis profundo, estrategia y ejecución de principio a fin.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Tu momento es ahora / Estadísticas -->
-    <section id="impacto" class="py-28 px-6 relative z-10 bg-cardDark/40 border-y border-accent/10">
+    <section id="impacto" class="py-28 px-6 relative z-10 bg-cardDark/40 border-y border-white/5">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
                     <h2 class="text-xs font-bold tracking-widest text-accent uppercase mb-3">Tu momento es ahora</h2>
-                    <h3 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-6 text-oliveText">Aumenta la visibilidad de tu producto con nosotros</h3>
-                    <p class="text-mutedText text-lg leading-relaxed mb-8">
+                    <h3 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-6">Aumenta la visibilidad de tu producto con nosotros</h3>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-8">
                         Somos el futuro digital de tu negocio. Cada proyecto es una oportunidad de conectar tu marca con las personas que la necesitan.
                     </p>
-                    <a href="#contacto" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold bg-accent hover:bg-accentHover text-dark transition-all shadow-xl shadow-dark/20">
+                    <a href="#contacto" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold bg-accent hover:bg-accentHover text-dark transition-all shadow-xl shadow-accent/20">
                         Empezar ahora <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                    <div class="glass p-8 rounded-2xl text-center border border-accent/10">
+                    <div class="glass p-8 rounded-2xl text-center border border-white/5">
                         <div class="text-4xl sm:text-5xl font-extrabold text-accent mb-2">100%</div>
-                        <div class="text-xs text-mutedText uppercase tracking-wider font-semibold">Diseño personalizado</div>
+                        <div class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Diseño personalizado</div>
                     </div>
-                    <div class="glass p-8 rounded-2xl text-center border border-accent/10">
-                        <div class="text-4xl sm:text-5xl font-extrabold text-accent mb-2">2×</div>
-                        <div class="text-xs text-mutedText uppercase tracking-wider font-semibold">Mayor visibilidad</div>
+                    <div class="glass p-8 rounded-2xl text-center border border-white/5">
+                        <div class="text-4xl sm:text-5xl font-extrabold text-neonCyan mb-2">2×</div>
+                        <div class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Mayor visibilidad</div>
                     </div>
-                    <div class="glass p-8 rounded-2xl text-center border border-accent/10">
+                    <div class="glass p-8 rounded-2xl text-center border border-white/5">
                         <div class="text-4xl sm:text-5xl font-extrabold text-accent mb-2">48h</div>
-                        <div class="text-xs text-mutedText uppercase tracking-wider font-semibold">Tiempo de respuesta</div>
+                        <div class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Tiempo de respuesta</div>
                     </div>
                 </div>
             </div>
@@ -215,23 +207,165 @@
         <div class="max-w-7xl mx-auto">
             <div class="text-center max-w-2xl mx-auto mb-20">
                 <h2 class="text-xs font-bold tracking-widest text-accent uppercase mb-3">Planes</h2>
-                <h3 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-oliveText">Elige el plan que mejor te convenga</h3>
+                <h3 class="text-3xl sm:text-5xl font-extrabold tracking-tight">Elige el plan que mejor te convenga</h3>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 <!-- Plan Básico -->
-                <div class="glass p-8 sm:p-10 rounded-3xl border border-accent/10 flex flex-col justify-between relative hover:border-accent/30 transition-all">
+                <div class="glass p-8 sm:p-10 rounded-3xl border border-white/5 flex flex-col justify-between relative hover:border-white/20 transition-all">
                     <div>
-                        <h4 class="text-2xl font-bold mb-2 text-oliveText">Plan Básico</h4>
-                        <p class="text-mutedText text-sm mb-6">Perfecto para emprendedores y pequeños negocios que quieren su presencia digital.</p>
+                        <h4 class="text-2xl font-bold mb-2">Plan Básico</h4>
+                        <p class="text-gray-400 text-sm mb-6">Perfecto para emprendedores y pequeños negocios que quieren su presencia digital.</p>
                         <div class="flex items-baseline gap-1 mb-8">
-                            <span class="text-5xl font-extrabold text-oliveText">$9</span>
-                            <span class="text-mutedText font-medium">/mes</span>
+                            <span class="text-5xl font-extrabold">$9</span>
+                            <span class="text-gray-400 font-medium">/mes</span>
                         </div>
-                        <ul class="space-y-4 mb-8 text-sm text-mutedText">
+                        <ul class="space-y-4 mb-8 text-sm text-gray-300">
                             <li class="flex items-center gap-3"><i class="fa-solid fa-check text-accent"></i> Página web de 1-3 secciones</li>
                             <li class="flex items-center gap-3"><i class="fa-solid fa-check text-accent"></i> Dominio por 1 año</li>
                             <li class="flex items-center gap-3"><i class="fa-solid fa-check text-accent"></i> Diseño responsivo</li>
                             <li class="flex items-center gap-3"><i class="fa-solid fa-check text-accent"></i> Formulario de contacto</li>
                             <li class="flex items-center gap-3"><i class="fa-solid fa-check text-accent"></i> Soporte vía WhatsApp</li>
                         </ul>
+                    </div>
+                    <a href="#contacto" class="w-full py-4 rounded-xl font-bold text-center glass hover:bg-white/10 transition-all border border-white/10 text-white">
+                        Comenzar con Básico
+                    </a>
+                </div>
+
+                <!-- Plan Pro -->
+                <div class="glass p-8 sm:p-10 rounded-3xl border-2 border-accent relative flex flex-col justify-between shadow-2xl shadow-accent/10">
+                    <div class="absolute -top-4 right-8 bg-accent text-dark text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full shadow-md">
+                        RECOMENDADO
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-bold mb-2">Plan Pro</h4>
+                        <p class="text-gray-400 text-sm mb-6">Para marcas que buscan destacar con una presencia digital completa y estratégica.</p>
+                        <div class="flex items-baseline gap-1 mb-8">
+                            <span class="text-5xl font-extrabold">$20</span>
+                            <span class="text-gray-400 font-medium">/mes</span>
+                        </div>
+                        <ul class="space-y-4 mb-8 text-sm text-gray-300">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-accent"></i> Todo lo del plan Básico</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-accent"></i> Catálogo interactivo</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-accent"></i> Identidad de marca completa</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-accent"></i> Optimización SEO</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-accent"></i> Soporte prioritario 24/7</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-accent"></i> Actualizaciones mensuales</li>
+                        </ul>
+                    </div>
+                    <a href="#contacto" class="w-full py-4 rounded-xl font-bold text-center bg-accent hover:bg-accentHover transition-all text-dark shadow-lg shadow-accent/25">
+                        Comenzar con Pro
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aliados / Marcas Section (Infinite Marquee) -->
+    <section id="aliados" class="py-20 relative z-10 overflow-hidden bg-cardDark/20 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6 mb-12 text-center">
+            <h2 class="text-xs font-bold tracking-widest text-accent uppercase mb-3">Aliados</h2>
+            <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Marcas que confían en Vértice</h3>
+        </div>
+
+        <div class="w-full overflow-hidden relative">
+            <div class="absolute left-0 inset-y-0 w-24 bg-gradient-to-r from-dark to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute right-0 inset-y-0 w-24 bg-gradient-to-l from-dark to-transparent z-10 pointer-events-none"></div>
+            
+            <div class="animate-scroll flex items-center space-x-16">
+                <!-- Bloque de Aliados -->
+                <div class="flex items-center space-x-16 text-gray-400 font-bold text-xl tracking-wider uppercase whitespace-nowrap">
+                    <div class="flex items-center gap-2 glass px-6 py-3 rounded-xl border border-white/5"><span class="text-accent">Stinlinky</span> <span class="text-xs lowercase text-gray-500 font-normal">Ver Catálogos</span></div>
+                    <div class="glass px-6 py-3 rounded-xl border border-white/5">DesignHub</div>
+                    <div class="glass px-6 py-3 rounded-xl border border-white/5">BrandLab</div>
+                    <div class="glass px-6 py-3 rounded-xl border border-white/5">CreativeFlow</div>
+                    <div class="glass px-6 py-3 rounded-xl border border-white/5">PixelCraft</div>
+                </div>
+                <!-- Duplicado exacto para efecto infinito fluido -->
+                <div class="flex items-center space-x-16 text-gray-400 font-bold text-xl tracking-wider uppercase whitespace-nowrap">
+                    <div class="flex items-center gap-2 glass px-6 py-3 rounded-xl border border-white/5"><span class="text-accent">Stinlinky</span> <span class="text-xs lowercase text-gray-500 font-normal">Ver Catálogos</span></div>
+                    <div class="glass px-6 py-3 rounded-xl border border-white/5">DesignHub</div>
+                    <div class="glass px-6 py-3 rounded-xl border border-white/5">BrandLab</div>
+                    <div class="glass px-6 py-3 rounded-xl border border-white/5">CreativeFlow</div>
+                    <div class="glass px-6 py-3 rounded-xl border border-white/5">PixelCraft</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section id="contacto" class="py-28 px-6 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-xs font-bold tracking-widest text-accent uppercase mb-3">Contacto</h2>
+            <h3 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-6">Hablemos sobre tu proyecto</h3>
+            <p class="text-gray-400 text-lg mb-12 max-w-xl mx-auto">
+                Estamos listos para escucharte. Contáctanos por el canal que prefieras y comencemos a construir el futuro digital de tu marca.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <!-- WhatsApp -->
+                <a href="https://wa.me/" target="_blank" class="glass p-8 rounded-2xl border border-white/5 hover:border-accent transition-all group flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-1 text-white">WhatsApp</h4>
+                    <span class="text-xs text-gray-400">Respuesta inmediata</span>
+                </a>
+
+                <!-- Llamada -->
+                <a href="tel:+" class="glass p-8 rounded-2xl border border-white/5 hover:border-accent transition-all group flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-2xl bg-accent/10 border border-accent/20 text-accent flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-1 text-white">Llamada</h4>
+                    <span class="text-xs text-gray-400">Atención directa</span>
+                </a>
+
+                <!-- Gmail -->
+                <a href="mailto:" class="glass p-8 rounded-2xl border border-white/5 hover:border-accent transition-all group flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-2xl bg-rose-500/10 border border-rose-500/20 text-rose-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-1 text-white">Gmail</h4>
+                    <span class="text-xs text-gray-400">Cotizaciones formales</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/5 text-center text-sm text-gray-500 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <span class="font-bold text-gray-300 tracking-wider">VÉRTICE</span>
+            <p>&copy; 2026 Vértice. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Script de Interactividad Dinámica -->
+    <script>
+        const questions = [
+            '¿Sigues sin saber cómo <span class="bg-gradient-to-r from-accent to-neonCyan bg-clip-text text-transparent cursor-pointer underline decoration-accent/40 hover:decoration-accent transition-all">mostrar tus productos con propósito</span>?',
+            '¿Buscas que tu marca <span class="bg-gradient-to-r from-accent to-neonCyan bg-clip-text text-transparent cursor-pointer underline decoration-accent/40 hover:decoration-accent transition-all">destaque en el mundo digital</span>?',
+            '¿Necesitas convertir visitantes en <span class="bg-gradient-to-r from-accent to-neonCyan bg-clip-text text-transparent cursor-pointer underline decoration-accent/40 hover:decoration-accent transition-all">clientes fieles con diseño estratégico</span>?'
+        ];
+        let currentIndex = 0;
+
+        function changeDynamicText() {
+            currentIndex = (currentIndex + 1) % questions.length;
+            const titleElement = document.getElementById('dynamic-hero-title');
+            titleElement.style.opacity = '0';
+            setTimeout(() => {
+                titleElement.innerHTML = questions[currentIndex];
+                titleElement.style.opacity = '1';
+            }, 250);
+        }
+
+        document.getElementById('dynamic-hero-title').style.transition = 'opacity 0.25s ease-in-out';
+
+        setInterval(() => {
+            changeDynamicText();
+        }, 6000);
+    </script>
+</body>
+</html>
